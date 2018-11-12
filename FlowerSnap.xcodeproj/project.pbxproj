@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4ECE872A21996B7B00E679F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE872921996B7B00E679F4 /* AppDelegate.swift */; };
+		4ECE872C21996B7B00E679F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE872B21996B7B00E679F4 /* ViewController.swift */; };
+		4ECE872F21996B7B00E679F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE872D21996B7B00E679F4 /* Main.storyboard */; };
+		4ECE873121996B7B00E679F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE873021996B7B00E679F4 /* Assets.xcassets */; };
+		4ECE873421996B7B00E679F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE873221996B7B00E679F4 /* LaunchScreen.storyboard */; };
+		4ECE873F21996B7C00E679F4 /* FlowerSnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE873E21996B7C00E679F4 /* FlowerSnapTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ECE873B21996B7C00E679F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ECE871E21996B7B00E679F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ECE872521996B7B00E679F4;
+			remoteInfo = FlowerSnap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4ECE872621996B7B00E679F4 /* FlowerSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECE872921996B7B00E679F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4ECE872B21996B7B00E679F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4ECE872E21996B7B00E679F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4ECE873021996B7B00E679F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4ECE873321996B7B00E679F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4ECE873521996B7B00E679F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECE873A21996B7C00E679F4 /* FlowerSnapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowerSnapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECE873E21996B7C00E679F4 /* FlowerSnapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerSnapTests.swift; sourceTree = "<group>"; };
+		4ECE874021996B7C00E679F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ECE872321996B7B00E679F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECE873721996B7C00E679F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4ECE871D21996B7B00E679F4 = {
+			isa = PBXGroup;
+			children = (
+				4ECE872821996B7B00E679F4 /* FlowerSnap */,
+				4ECE873D21996B7C00E679F4 /* FlowerSnapTests */,
+				4ECE872721996B7B00E679F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4ECE872721996B7B00E679F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ECE872621996B7B00E679F4 /* FlowerSnap.app */,
+				4ECE873A21996B7C00E679F4 /* FlowerSnapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ECE872821996B7B00E679F4 /* FlowerSnap */ = {
+			isa = PBXGroup;
+			children = (
+				4ECE872921996B7B00E679F4 /* AppDelegate.swift */,
+				4ECE872B21996B7B00E679F4 /* ViewController.swift */,
+				4ECE872D21996B7B00E679F4 /* Main.storyboard */,
+				4ECE873021996B7B00E679F4 /* Assets.xcassets */,
+				4ECE873221996B7B00E679F4 /* LaunchScreen.storyboard */,
+				4ECE873521996B7B00E679F4 /* Info.plist */,
+			);
+			path = FlowerSnap;
+			sourceTree = "<group>";
+		};
+		4ECE873D21996B7C00E679F4 /* FlowerSnapTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ECE873E21996B7C00E679F4 /* FlowerSnapTests.swift */,
+				4ECE874021996B7C00E679F4 /* Info.plist */,
+			);
+			path = FlowerSnapTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ECE872521996B7B00E679F4 /* FlowerSnap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECE874321996B7C00E679F4 /* Build configuration list for PBXNativeTarget "FlowerSnap" */;
+			buildPhases = (
+				4ECE872221996B7B00E679F4 /* Sources */,
+				4ECE872321996B7B00E679F4 /* Frameworks */,
+				4ECE872421996B7B00E679F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowerSnap;
+			productName = FlowerSnap;
+			productReference = 4ECE872621996B7B00E679F4 /* FlowerSnap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ECE873921996B7C00E679F4 /* FlowerSnapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECE874621996B7C00E679F4 /* Build configuration list for PBXNativeTarget "FlowerSnapTests" */;
+			buildPhases = (
+				4ECE873621996B7C00E679F4 /* Sources */,
+				4ECE873721996B7C00E679F4 /* Frameworks */,
+				4ECE873821996B7C00E679F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ECE873C21996B7C00E679F4 /* PBXTargetDependency */,
+			);
+			name = FlowerSnapTests;
+			productName = FlowerSnapTests;
+			productReference = 4ECE873A21996B7C00E679F4 /* FlowerSnapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ECE871E21996B7B00E679F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "陆依鸣";
+				TargetAttributes = {
+					4ECE872521996B7B00E679F4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4ECE873921996B7C00E679F4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4ECE872521996B7B00E679F4;
+					};
+				};
+			};
+			buildConfigurationList = 4ECE872121996B7B00E679F4 /* Build configuration list for PBXProject "FlowerSnap" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ECE871D21996B7B00E679F4;
+			productRefGroup = 4ECE872721996B7B00E679F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ECE872521996B7B00E679F4 /* FlowerSnap */,
+				4ECE873921996B7C00E679F4 /* FlowerSnapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ECE872421996B7B00E679F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECE873421996B7B00E679F4 /* LaunchScreen.storyboard in Resources */,
+				4ECE873121996B7B00E679F4 /* Assets.xcassets in Resources */,
+				4ECE872F21996B7B00E679F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECE873821996B7C00E679F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ECE872221996B7B00E679F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECE872C21996B7B00E679F4 /* ViewController.swift in Sources */,
+				4ECE872A21996B7B00E679F4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECE873621996B7C00E679F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECE873F21996B7C00E679F4 /* FlowerSnapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ECE873C21996B7C00E679F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ECE872521996B7B00E679F4 /* FlowerSnap */;
+			targetProxy = 4ECE873B21996B7C00E679F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4ECE872D21996B7B00E679F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECE872E21996B7B00E679F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4ECE873221996B7B00E679F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECE873321996B7B00E679F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4ECE874121996B7C00E679F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4ECE874221996B7C00E679F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ECE874421996B7C00E679F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowerSnap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = luyiming.FlowerSnap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4ECE874521996B7C00E679F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowerSnap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = luyiming.FlowerSnap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4ECE874721996B7C00E679F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowerSnapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = luyiming.FlowerSnapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowerSnap.app/FlowerSnap";
+			};
+			name = Debug;
+		};
+		4ECE874821996B7C00E679F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlowerSnapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = luyiming.FlowerSnapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowerSnap.app/FlowerSnap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ECE872121996B7B00E679F4 /* Build configuration list for PBXProject "FlowerSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECE874121996B7C00E679F4 /* Debug */,
+				4ECE874221996B7C00E679F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECE874321996B7C00E679F4 /* Build configuration list for PBXNativeTarget "FlowerSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECE874421996B7C00E679F4 /* Debug */,
+				4ECE874521996B7C00E679F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECE874621996B7C00E679F4 /* Build configuration list for PBXNativeTarget "FlowerSnapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECE874721996B7C00E679F4 /* Debug */,
+				4ECE874821996B7C00E679F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ECE871E21996B7B00E679F4 /* Project object */;
+}
