@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7F6A8B219DA384004C5E47 /* DenseNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F6A89219DA384004C5E47 /* DenseNet.mlmodel */; };
+		4E7F6A8C219DA384004C5E47 /* LR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F6A8A219DA384004C5E47 /* LR.mlmodel */; };
+		4EA66762219E9A9F0056F84F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA66761219E9A9F0056F84F /* DetailViewController.swift */; };
+		4EA66764219EA1A30056F84F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA66763219EA1A30056F84F /* ResultViewController.swift */; };
+		4EA66766219EA1F20056F84F /* SubResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA66765219EA1F20056F84F /* SubResultViewController.swift */; };
+		4EA66768219F1DA60056F84F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA66767219F1DA60056F84F /* Utils.swift */; };
 		4ECE872A21996B7B00E679F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE872921996B7B00E679F4 /* AppDelegate.swift */; };
 		4ECE872C21996B7B00E679F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE872B21996B7B00E679F4 /* ViewController.swift */; };
 		4ECE872F21996B7B00E679F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE872D21996B7B00E679F4 /* Main.storyboard */; };
@@ -26,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E7F6A89219DA384004C5E47 /* DenseNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DenseNet.mlmodel; sourceTree = "<group>"; };
+		4E7F6A8A219DA384004C5E47 /* LR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LR.mlmodel; sourceTree = "<group>"; };
+		4EA66761219E9A9F0056F84F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4EA66763219EA1A30056F84F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4EA66765219EA1F20056F84F /* SubResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubResultViewController.swift; sourceTree = "<group>"; };
+		4EA66767219F1DA60056F84F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4ECE872621996B7B00E679F4 /* FlowerSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECE872921996B7B00E679F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ECE872B21996B7B00E679F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E8CC86F219D62F000325E5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E7F6A89219DA384004C5E47 /* DenseNet.mlmodel */,
+				4E7F6A8A219DA384004C5E47 /* LR.mlmodel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4ECE871D21996B7B00E679F4 = {
 			isa = PBXGroup;
 			children = (
+				4E8CC86F219D62F000325E5B /* Model */,
 				4ECE872821996B7B00E679F4 /* FlowerSnap */,
 				4ECE873D21996B7C00E679F4 /* FlowerSnapTests */,
 				4ECE872721996B7B00E679F4 /* Products */,
@@ -83,6 +105,10 @@
 				4ECE873021996B7B00E679F4 /* Assets.xcassets */,
 				4ECE873221996B7B00E679F4 /* LaunchScreen.storyboard */,
 				4ECE873521996B7B00E679F4 /* Info.plist */,
+				4EA66761219E9A9F0056F84F /* DetailViewController.swift */,
+				4EA66763219EA1A30056F84F /* ResultViewController.swift */,
+				4EA66765219EA1F20056F84F /* SubResultViewController.swift */,
+				4EA66767219F1DA60056F84F /* Utils.swift */,
 			);
 			path = FlowerSnap;
 			sourceTree = "<group>";
@@ -197,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA66766219EA1F20056F84F /* SubResultViewController.swift in Sources */,
+				4E7F6A8C219DA384004C5E47 /* LR.mlmodel in Sources */,
 				4ECE872C21996B7B00E679F4 /* ViewController.swift in Sources */,
+				4EA66762219E9A9F0056F84F /* DetailViewController.swift in Sources */,
 				4ECE872A21996B7B00E679F4 /* AppDelegate.swift in Sources */,
+				4E7F6A8B219DA384004C5E47 /* DenseNet.mlmodel in Sources */,
+				4EA66764219EA1A30056F84F /* ResultViewController.swift in Sources */,
+				4EA66768219F1DA60056F84F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
