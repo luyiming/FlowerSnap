@@ -46,10 +46,13 @@ class ResultViewController: UIViewController, UIPageViewControllerDataSource, UI
             subResultView.labelName = nil
             subResultView.prob = nil
             subResultView.thumbnailImage = UIImage(named: "unknown")
+            subResultView.predictIndex = nil
         } else {
-            subResultView.labelName = index2label[self.predictIndex[index]]
+            let t = self.predictIndex[index]
+            subResultView.labelName = index2chn[t]! + "(" + index2name[t]! + ")"
             subResultView.prob = self.predictProbs[index]
             subResultView.thumbnailImage = index2image[self.predictIndex[index]]
+            subResultView.predictIndex = t
         }
         
         subResultView.pageIndex = index

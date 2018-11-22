@@ -13,6 +13,7 @@ class SubResultViewController: UIViewController {
     var labelName: String?
     var prob: Double?
     var thumbnailImage: UIImage?
+    var predictIndex: Int?
     
     @IBOutlet weak var predictLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -40,15 +41,28 @@ class SubResultViewController: UIViewController {
 
         imageView.layer.borderWidth = 3.0
         imageView.layer.borderColor = UIColor.white.cgColor
-//        
-//        imageView.layer.shadowColor = UIColor.black.cgColor
-//        imageView.layer.shadowRadius = 5.0
-//        imageView.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
-//        imageView.layer.shadowOpacity = 1.0
     }
     
-    @IBAction func startAgain(_ sender: UIButton) {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if self.labelName == nil {
+            return false
+        }
         
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowWikiSegue" {
+            let wikiViewController = segue.destination as! WebViewController
+            
+            wikiViewController.searchTerm = index2sci[self.predictIndex!]!
+            wikiViewController.site = .Wiki
+        } else if segue.identifier == "ShowBingImageSegue" {
+            let bingViewController = segue.destination as! WebViewController
+            
+            bingViewController.searchTerm = self.labelName!
+            bingViewController.site = .Bing
+        }
     }
     
     /*

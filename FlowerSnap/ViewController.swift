@@ -15,7 +15,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let cnn = DenseNet()
     let classifier = LR()
     
-    var sourceImage: UIImage?
+    var pickedImage: UIImage?
+    var predictIndex: [Int]?
+    var predictProbs: [Double]?
     var resultViewController: ResultViewController?
     
     override func viewDidLoad() {
@@ -23,42 +25,94 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view, typically from a nib.
 
         imagePicker.delegate = self
+        
+        
+//
+//        let mainBundle = Bundle.main
+//        let path = mainBundle.path(forResource: "labels", ofType: "json")
+//        print(path ?? "NotFound")
+//        let jsonData = try! String(contentsOfFile: path!)
+//        print(jsonData)
+//
+//        let json = try? JSONSerialization.jsonObject(with: jsonData.data(using: String.Encoding.utf8)!, options: [])
+//
+//        if let dictionary = json as? [String: Any] {
+//            if let number = dictionary["go"] as? [Int] {
+//                print(number)
+//            }
+//
+//            for (key, value) in dictionary {
+//                print(key, value)
+//            }
+//        }
+    }
+    
+    // MARK: - Button Actions
+    @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera not available")
+        } else {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func presentResult() {
+        if let img = self.pickedImage {
+            let (index, probs) = predict(for: img)
+            self.predictProbs = probs
+            self.predictIndex = index
+            
+            self.performSegue(withIdentifier: "ShowResultSegue", sender: self)
+        }
+
+        //        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {
+        //            fatalError("Check storyboard for missing ResultViewController")
+        //        }
+        //
+        //        self.resultViewController = viewController
+        //        self.resultViewController!.sourceImage = self.sourceImage!
+        //
+        //        present(self.resultViewController!, animated: true, completion: nil)
     }
     
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-
         present(imagePicker, animated: true, completion: nil)
     }
     
-    // MARK: - UIImagePickerControllerDelegate Methods
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
+        
+    }
     
+    // MARK: - UIImagePickerControllerDelegate Methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.sourceImage = pickedImage
+        if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.pickedImage = img
         }
-        
-        dismiss(animated: true, completion: nil)
-        
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {
-            fatalError("Check storyboard for missing ResultViewController")
+
+        dismiss(animated: true, completion: presentResult)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "ShowResultSegue" {
+                if let resultViewController = segue.destination as? ResultViewController {
+                    resultViewController.sourceImage = self.pickedImage
+                    resultViewController.predictIndex = self.predictIndex ?? [Int]()
+                    resultViewController.predictProbs = self.predictProbs ?? [Double]()
+                }
+            }
         }
-        
-        self.resultViewController = viewController
-        self.resultViewController!.sourceImage = self.sourceImage!
-        
-        predict(for: self.sourceImage!)
-        
-        present(self.resultViewController!, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 
-    func predict(for image: UIImage) {
-        
+    func predict(for image: UIImage) -> ([Int], [Double]) {
         let resizedImage = image.resizedImage(to: CGSize(width: 224, height: 224))
         
         guard let feature = try? cnn.prediction(input1: resizedImage.pixelBuffer()!) else {
@@ -74,16 +128,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         for (index, prob) in sortedResults {
-            print("\(index2label[Int(index)] ?? "unknown label") \(prob)")
+            print("\(index2name[Int(index)] ?? "unknown label") \(prob)")
         }
 
-        print(index2label[Int(probs.classLabel)] ?? "unkown label")
+        print(index2name[Int(probs.classLabel)] ?? "unkown label")
         
         let filteredResults = sortedResults.filter { (index, prob) in prob > 0.1 }
         
-        self.resultViewController?.predictIndex = filteredResults.map{ (index, prob) in Int(index) }
+        let predictIndex = filteredResults.map{ (index, prob) in Int(index) }
+        let predictProbs = filteredResults.map{ (index, prob) in prob }
         
-        self.resultViewController?.predictProbs = filteredResults.map{ (index, prob) in prob }
+        return (predictIndex, predictProbs)
     }
 }
 
