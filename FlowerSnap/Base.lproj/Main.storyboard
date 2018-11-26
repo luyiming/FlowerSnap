@@ -13,7 +13,7 @@
         <!--Flower Snap-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Flower Snap" id="BYZ-38-t0r" customClass="ViewController" customModule="FlowerSnap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Flower Snap" id="BYZ-38-t0r" customClass="MainViewController" customModule="FlowerSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +50,7 @@
                                                 <state key="normal" title="历史"/>
                                                 <connections>
                                                     <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHq-d3-cOa"/>
+                                                    <segue destination="mez-Ie-Uz5" kind="show" id="H9N-5O-jiY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -75,6 +76,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.2" y="107.88177339901478"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="HOU-PI-vTT">
+            <objects>
+                <tableViewController title="History" id="mez-Ie-Uz5" customClass="HistoryTableViewController" customModule="FlowerSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4pi-0L-djo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" textLabel="4vS-hY-ZAU" imageView="8fM-th-vwu" rowHeight="44" style="IBUITableViewCellStyleDefault" id="8hQ-pw-naF" customClass="HistoryTableViewCell" customModule="FlowerSnap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8hQ-pw-naF" id="B6Q-Y5-H1i">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4vS-hY-ZAU">
+                                            <rect key="frame" x="97" y="0.0" width="262" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="artichoke" id="8fM-th-vwu">
+                                            <rect key="frame" x="16" y="0.0" width="66" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="I8o-Rb-tpi" kind="show" identifier="ShowResultFromHistory" id="J4n-NO-avF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mez-Ie-Uz5" id="luJ-Tc-G1x"/>
+                            <outlet property="delegate" destination="mez-Ie-Uz5" id="xIe-nx-CMt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wR0-TQ-Lmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="838"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="5AB-Nb-hTW">
@@ -255,8 +300,10 @@
     </scenes>
     <resources>
         <image name="MainScreenLogo" width="1024" height="1024"/>
+        <image name="artichoke" width="752" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eK7-oa-sNo"/>
+        <segue reference="J4n-NO-avF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,9 +12,9 @@ class ResultViewController: UIViewController, UIPageViewControllerDataSource, UI
     
     var pageControl = UIPageControl()
     
-    var predictIndex: [Int] = [0, 3]
-    var predictProbs: [Double] = [0.813, 0.187]
-    var sourceImage: UIImage? = index2image[0]
+    var predictIndex =  [Int]()
+    var predictProbs = [Double]()
+    var sourceImage = index2image[0]
     
     @IBOutlet weak var sourceImageView: UIImageView!
     

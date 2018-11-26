@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let imagePicker = UIImagePickerController()
     
@@ -97,12 +97,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "ShowResultSegue" {
-                if let resultViewController = segue.destination as? ResultViewController {
-                    resultViewController.sourceImage = self.pickedImage
-                    resultViewController.predictIndex = self.predictIndex ?? [Int]()
-                    resultViewController.predictProbs = self.predictProbs ?? [Double]()
+        if segue.identifier == "ShowResultSegue" {
+            if let resultViewController = segue.destination as? ResultViewController {
+                resultViewController.sourceImage = self.pickedImage
+                resultViewController.predictIndex = self.predictIndex ?? [Int]()
+                resultViewController.predictProbs = self.predictProbs ?? [Double]()
+                
+                let history = HistoryItem(sourceImage: self.pickedImage!, predictIndex: self.predictIndex ?? [Int](), predictProbs: self.predictProbs ?? [Double]())!
+                
+                if let savedHistory = History.loadHistorys() {
+                    History.saveHistorys(historys: [history] + savedHistory)
+                } else {
+                    History.saveHistorys(historys: [history])
                 }
             }
         }
