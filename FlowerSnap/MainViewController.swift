@@ -48,7 +48,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     // MARK: - Button Actions
-    @IBAction func takePhotoButtonTapped(_ sender: UIButton) {
+    @IBAction func takePhotoButtonTapped(_ sender: UIButton?) {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             print("Camera not available")
         } else {
@@ -77,14 +77,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //        present(self.resultViewController!, animated: true, completion: nil)
     }
     
-    @IBAction func loadImageButtonTapped(_ sender: UIButton) {
+    @IBAction func loadImageButtonTapped(_ sender: UIButton?) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
-    }
-    
-    @IBAction func historyButtonTapped(_ sender: UIButton) {
-        
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods

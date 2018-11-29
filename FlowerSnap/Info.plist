@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Take Photo</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>${PRODUCT_BUNDLE_IDENTIFIER}.ShortcutTakePhoto</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Photo Library</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut-image</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>${PRODUCT_BUNDLE_IDENTIFIER}.ShortcutPhotoLibrary</string>
+		</dict>
+	</array>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>Use camera to take photos</string>
 	<key>LSApplicationCategoryType</key>

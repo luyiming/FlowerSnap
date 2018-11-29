@@ -49,8 +49,10 @@
                                                 <rect key="frame" x="172" y="0.0" width="31" height="30"/>
                                                 <state key="normal" title="历史"/>
                                                 <connections>
-                                                    <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHq-d3-cOa"/>
-                                                    <segue destination="mez-Ie-Uz5" kind="show" id="H9N-5O-jiY"/>
+                                                    <segue destination="mez-Ie-Uz5" kind="show" id="H9N-5O-jiY">
+                                                        <segue key="commit" inheritsFrom="parent" id="naR-Xb-l8N"/>
+                                                        <segue key="preview" inheritsFrom="commit" id="0KA-LH-Wfz"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -209,14 +211,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="89.333333333333329"/>
                                                 <state key="normal" title="查看百科"/>
                                                 <connections>
-                                                    <segue destination="1o6-ql-k0m" kind="show" identifier="ShowWikiSegue" id="8kT-wt-a5B"/>
+                                                    <segue destination="1o6-ql-k0m" kind="show" identifier="ShowWikiSegue" id="8kT-wt-a5B">
+                                                        <segue key="commit" inheritsFrom="parent" id="X4y-7B-RRN"/>
+                                                        <segue key="preview" inheritsFrom="commit" id="Crc-3G-r3k"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVO-ej-AYA">
                                                 <rect key="frame" x="93.999999999999986" y="0.0" width="62.000000000000014" height="89.333333333333329"/>
                                                 <state key="normal" title="更多图片"/>
                                                 <connections>
-                                                    <segue destination="1o6-ql-k0m" kind="show" identifier="ShowBingImageSegue" id="eK7-oa-sNo"/>
+                                                    <segue destination="1o6-ql-k0m" kind="show" identifier="ShowBingImageSegue" id="eK7-oa-sNo">
+                                                        <segue key="commit" inheritsFrom="parent" id="gL3-gy-gsK"/>
+                                                        <segue key="preview" inheritsFrom="commit" id="9TQ-cV-qcT"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -304,6 +312,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eK7-oa-sNo"/>
-        <segue reference="J4n-NO-avF"/>
+        <segue reference="Idy-eu-TfL"/>
+        <segue reference="H9N-5O-jiY"/>
     </inferredMetricsTieBreakers>
 </document>

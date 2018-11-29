@@ -41,6 +41,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    enum ShortcutType: String {
+        case TakePhoto = "ShortcutTakePhoto"
+        case PhotoLibrary = "ShortcutPhotoLibrary"
+    }
+    
+    func handleShortcutItem(withShortcutItem item: UIApplicationShortcutItem) -> Bool {
+        
+        guard let shortcutType = item.type.components(separatedBy: ".").last else { return false }
+        
+        if let type = ShortcutType(rawValue: shortcutType) {
+            switch type {
+            case .TakePhoto:
+                if let vc = window?.rootViewController as? UINavigationController {
+                    if let mainVC = vc.viewControllers[0] as? MainViewController {
+                        mainVC.takePhotoButtonTapped(nil)
+                    }
+                }
+                
+                return true
+            case .PhotoLibrary:
+                if let vc = window?.rootViewController as? UINavigationController {
+                    if let mainVC = vc.viewControllers[0] as? MainViewController {
+                        mainVC.loadImageButtonTapped(nil)
+                    }
+                }
+                
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        completionHandler(handleShortcutItem(withShortcutItem: shortcutItem))
+    }
 
 }
 
