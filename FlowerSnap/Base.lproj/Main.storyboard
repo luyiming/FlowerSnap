@@ -28,8 +28,8 @@
                                             <constraint firstAttribute="height" constant="280" id="nOh-Ko-znt"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="eii-mh-B4b">
-                                        <rect key="frame" x="74" y="313" width="203" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eii-mh-B4b">
+                                        <rect key="frame" x="99" y="313" width="153" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg4-E4-P2p">
                                                 <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
@@ -39,14 +39,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6Y-k7-GvT">
-                                                <rect key="frame" x="86" y="0.0" width="31" height="30"/>
+                                                <rect key="frame" x="61" y="0.0" width="31" height="30"/>
                                                 <state key="normal" title="拍照"/>
                                                 <connections>
                                                     <action selector="takePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUR-i8-ZwR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6U-Fj-vmd">
-                                                <rect key="frame" x="172" y="0.0" width="31" height="30"/>
+                                                <rect key="frame" x="122" y="0.0" width="31" height="30"/>
                                                 <state key="normal" title="历史"/>
                                                 <connections>
                                                     <segue destination="mez-Ie-Uz5" kind="show" id="H9N-5O-jiY">
@@ -69,7 +69,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Flower Snap" id="1vx-Yl-IKB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="uos-ha-RJf"/>
+                        <barButtonItem key="rightBarButtonItem" title="地图" id="uos-ha-RJf">
+                            <connections>
+                                <segue destination="WoT-0j-Qmt" kind="show" id="a8n-Yh-yhc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="I8o-Rb-tpi" kind="show" identifier="ShowResultSegue" id="Idy-eu-TfL"/>
@@ -122,6 +126,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wR0-TQ-Lmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="838"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Fdh-FT-byC">
+            <objects>
+                <viewController id="WoT-0j-Qmt" customClass="MapViewController" customModule="FlowerSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kMd-O8-BVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6gU-fd-0OT">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AB8-c3-6Pf"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="6gU-fd-0OT" id="tFk-PX-Zv9"/>
+                        <segue destination="I8o-Rb-tpi" kind="show" identifier="ShowResultFromMap" id="lH2-Sg-iPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAc-lP-Qc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="-647.29064039408865"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="5AB-Nb-hTW">
@@ -311,8 +340,8 @@
         <image name="artichoke" width="752" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eK7-oa-sNo"/>
-        <segue reference="Idy-eu-TfL"/>
+        <segue reference="8kT-wt-a5B"/>
+        <segue reference="J4n-NO-avF"/>
         <segue reference="H9N-5O-jiY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -46,6 +46,10 @@ class History {
     }
     
     static func loadHistorys() -> [HistoryItem]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: HistoryItem.ArchiveURL.path) as? [HistoryItem]
+        guard let codedData = try? Data(contentsOf: HistoryItem.ArchiveURL) else { return nil }
+
+        return try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(codedData) as? [HistoryItem]
+        
+//        return NSKeyedUnarchiver.unarchiveObject(withFile: HistoryItem.ArchiveURL.path) as? [HistoryItem]
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ResultViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
@@ -16,7 +17,11 @@ class ResultViewController: UIViewController, UIPageViewControllerDataSource, UI
     var predictProbs = [Double]()
     var sourceImage = index2image[0]
     
+    var isSharing = false
+    
     @IBOutlet weak var sourceImageView: UIImageView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,16 @@ class ResultViewController: UIViewController, UIPageViewControllerDataSource, UI
         pageViewController.setViewControllers([createSubResultViewController(index: 0)], direction: .forward, animated: true, completion: nil)
         
         configurePageControl()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(ResultViewController.shareResultAction))
+        
+        locationManager.delegate = self
+    }
+    
+    @objc func shareResultAction() {
+        isSharing = true
+        getCurrentLocationAndShare()
+        print("share!")
     }
     
     func createSubResultViewController(index: Int) -> SubResultViewController {
@@ -125,4 +140,135 @@ class ResultViewController: UIViewController, UIPageViewControllerDataSource, UI
     }
     */
 
+}
+
+extension ResultViewController: CLLocationManagerDelegate {
+    
+    func getCurrentLocationAndShare() {
+        if ( CLLocationManager.authorizationStatus() == .notDetermined) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        case .denied:
+            
+            let alertController = UIAlertController(title: "Locating Denied", message: "You did not grant the locating permission for this app.", preferredStyle: .alert)
+            
+            
+            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(OKAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            return
+        }
+    }
+    
+    func sendData(latitude: Double, longitude: Double) {
+        
+        guard let image = sourceImage else { return }
+        
+        guard let base64data = image.pngData()?.base64EncodedString() else { return }
+        
+        var flowerName = "Unknown"
+        if predictIndex.count != 0 {
+            flowerName = index2chn[predictIndex[0]]! + "(" + index2name[predictIndex[0]]! + ")"
+        }
+        
+        // prepare json data
+        let json: [String: Any] = [
+            "name": flowerName,
+            "latitude": latitude,
+            "longitude": longitude,
+            "sourceImage": base64data,
+            "predictIndex": predictIndex,
+            "predictProbs": predictProbs
+        ]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        var request = URLRequest(url: URL(string: "http://127.0.0.1:5000/share")!)
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        // HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            print("upload success")
+            
+            let alertController = UIAlertController(title: "上传成功", message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler: nil))
+
+            DispatchQueue.main.async {
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            
+//            print(data)
+//            print(String.init(data: data, encoding: String.Encoding.utf8) ?? "")
+
+            //create json object from data
+            //            guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+            //                completion(nil, NSError(domain: "invalidJSONTypeError", code: -100009, userInfo: nil))
+            //                return
+            //            }
+            //            print(json)
+        }
+        
+        task.resume()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if isSharing == false {
+            return
+        }
+        
+        if let coordinate = locations.first?.coordinate {
+            print(coordinate)
+            isSharing = false
+            
+            let alertController = UIAlertController(title: "分享", message: "是否分享图片？", preferredStyle: .alert)
+            
+            let confirmAction = UIAlertAction(title: "确定", style: .default) { (_: UIAlertAction) in
+                print("确定")
+                
+                self.sendData(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            }
+            
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_: UIAlertAction) in
+                print("取消")
+            }
+            
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            locationManager.stopUpdatingLocation()
+        } else {
+            print("no location")
+        }
+        
+    }
+    
 }

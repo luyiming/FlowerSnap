@@ -53,13 +53,12 @@ class HistoryTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
-        
         // Fetches the appropriate meal for the data source layout.
         let history = historys[indexPath.row]
 
         cell.textLabel?.text = history.title
-        cell.imageView?.image = history.sourceImage
-
+        cell.imageView?.image = history.sourceImage.resizedImage(to: CGSize(width: 50, height: 44))
+        
         return cell
     }
  
