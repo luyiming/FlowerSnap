@@ -7,9 +7,10 @@
 [Wiki](https://github.com/luyiming/FlowerSnap/wiki)    <----- 戳这里看文档
 
 ## Screenshots
-![](screenshots/0_main.png)
-![](screenshots/2_result_0.png)
-![](screenshots/5_map_callout.png)
+
+<img src="https://github.com/luyiming/FlowerSnap/blob/master/screenshots/0_main.png" width="300" />
+<img src="https://github.com/luyiming/FlowerSnap/blob/master/screenshots/2_result_0.png" width="300" />
+<img src="https://github.com/luyiming/FlowerSnap/blob/master/screenshots/5_map_callout.png" width="300" />
 
 ## Classfication Model Architecture
 
