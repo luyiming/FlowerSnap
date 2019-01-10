@@ -3,6 +3,10 @@
 - Apple Core ML
 - Apple MapKit
 
+## Documentation
+[Wiki](https://github.com/luyiming/FlowerSnap/wiki)    <----- 戳这里看文档
+
+
 ## Classfication Model Architecture
 
 [FlowerSnapModel](https://github.com/luyiming/FlowerSnapModel)
