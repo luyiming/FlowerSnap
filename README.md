@@ -1,7 +1,7 @@
 # Flower Species Classfication App
 
 - Apple Core ML
-- Apple ARKit
+- Apple MapKit
 
 ## Classfication Model Architecture
 
