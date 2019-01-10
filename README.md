@@ -6,6 +6,10 @@
 ## Documentation
 [Wiki](https://github.com/luyiming/FlowerSnap/wiki)    <----- 戳这里看文档
 
+## Screenshots
+![](screenshots/0_main.png)
+![](screenshots/2_result_0.png)
+![](screenshots/5_map_callout.png)
 
 ## Classfication Model Architecture
 
